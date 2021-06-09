@@ -37,6 +37,8 @@ function broadcastevent(method, data) {
                 'data': data
             };
             ws.send(JSON.stringify(message));
+	    console.log( message );
+		
         } catch (err) { 
             console.error(err);
         } finally {

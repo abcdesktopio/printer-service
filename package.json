@@ -4,6 +4,7 @@
   "private": true,
   "version": "0.0.6",
   "description": "Node.js printer service",
+  "license": "GNU GPL 2",
   "author": "Alexandre DEVELY",
   "dependencies": {
     "chokidar": "3.5.3",

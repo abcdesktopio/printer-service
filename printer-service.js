@@ -14,9 +14,10 @@
 const WebSocketClient = require('ws');
 const chokidar        = require('chokidar');
 
-const DIR = ".printer-queue";
+# const DIR = ".printer-queue";
 const home = process.env.HOME;
-const watchdir = home + '/' + DIR;
+# const watchdir = home + '/' + DIR;
+const watchdir = "/var/spool/cups-pdf/ANONYMOUS";
 
 let watcher = null;
 

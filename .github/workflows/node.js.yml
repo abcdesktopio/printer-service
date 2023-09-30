@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Dispatch repository oc.user
-        uses: peter-evans/repository-dispatch@v1
+        uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/oc.user
           event-type: dispatch-from-printer-service
 
       - name: Dispatch repository oc.cupsd
-        uses: peter-evans/repository-dispatch@v1
+        uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/oc.cupsd

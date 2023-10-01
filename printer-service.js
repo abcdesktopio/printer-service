@@ -13,6 +13,7 @@
 
 const WebSocketClient = require('ws');
 const chokidar = require('chokidar');
+const filepath = require('path');
 const watchdir = process.env.WATCHDIR || process.env.HOME;
 let watcher = null;
 
@@ -53,10 +54,13 @@ function printer_addchange( path, stat) {
 	console.log( 'printer_addchange' );
 	if (watcher.printerready) {
 		const jsonres = {};
-		const urlpath = path.slice( watcher.home.length ); 
+		console.log( 'path=' + path );
+		const urlpath = filepath.basename( path );
+		console.log( 'urlpath=' + urlpath );
 		jsonres.newfile = true;
 		jsonres.date = Date.now().toString();
 		jsonres.path = urlpath;
+		console.log( jsonres );
 		broadcastevent( 'printer.new', jsonres );
 	}
 }

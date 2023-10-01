@@ -12,8 +12,8 @@
 */
 
 const WebSocketClient = require('ws');
-const chokidar        = require('chokidar');
-const watchdir = "/var/spool/cups-pdf/ANONYMOUS";
+const chokidar = require('chokidar');
+const watchdir = process.env.WATCHDIR || process.env.HOME;
 let watcher = null;
 
 function broadcastevent(method, data) {

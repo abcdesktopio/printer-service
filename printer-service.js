@@ -20,10 +20,12 @@ let watcher = null;
 function broadcastevent(method, data) {
     const broadcast_tcp_port = process.env.BROADCAST_SERVICE_TCP_PORT || 29784;
     const buri = `ws://${process.env.CONTAINER_IP_ADDR}:${broadcast_tcp_port}`;
-
-    const ws = new WebSocketClient(buri,  {
-        host:process.env.CONTAINER_IP_ADDR,
-    });
+    const protocols = [];
+    const ws = new WebSocketClient(
+	buri,  
+	protocols,
+	{ host:process.env.CONTAINER_IP_ADDR, }
+    );
 
     ws.on('open', () => {
         console.log("Connection to broadcast-service done !");

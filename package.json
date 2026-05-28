@@ -8,6 +8,6 @@
   "author": "Alexandre DEVELY",
   "dependencies": {
     "chokidar": "4.0.1",
-    "ws": "8.18.0"
+    "ws": "8.20.1"
   }
 }
